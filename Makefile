@@ -28,6 +28,9 @@ jsmn_test.o: jsmn_test.c libjsmn.a
 simple_example: example/simple.o libjsmn.a
 	$(CC) $(LDFLAGS) $^ -o $@
 
+parsetest: example/parsetest.o libjsmn.a
+	$(CC) $(LDFLAGS) $^ -o $@
+
 jsondump: example/jsondump.o libjsmn.a
 	$(CC) $(LDFLAGS) $^ -o $@
 
@@ -36,6 +39,7 @@ clean:
 	rm -f *.a *.so
 	rm -f simple_example
 	rm -f jsondump
+	rm -f parsetest
 
 .PHONY: all clean test
 
